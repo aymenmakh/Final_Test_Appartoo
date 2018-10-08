@@ -1,0 +1,50 @@
+
+{% extends  "@Marsupilami/layout.html.twig"%}
+{% block body %}
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body box-profile">
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-10">
+
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <table class="table table-bordered">
+
+                                    {% for a in amis %}
+                                        {%  set found = 0 %}
+                                        {% if not(app.user.id == a.id) %}
+                                            {% for aa in app.user.amis %}
+                                                {% if a==aa %}
+                                                    {% set found =  1 %}
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            <tr>
+
+                                                <td> <b>UserName :</b> {{ a.username}} </td>
+                                                <td> <b>Famille :</b> {{ a.famille }} </td>
+                                                <td> <b>Nourriture :</b>  {{ a.nourriture}} </td>
+                                                <td>  <b>Couleur :</b>  {{ a.couleur }} </td>
+                                                <td> <b>Age :</b>  {{ a.age }} </td>
+                                                {% if found>0 %}
+                                                    <td> <a href="{{ path('marsupilami_Supp_amis', {'id': a.id}) }}">  <button type="button" class="btn btn-block btn-danger btn-sm">retirer de ma liste d'amis</button></a>
+                                                    </td>
+                                                {% else %}
+                                                    <td> <a href="{{ path('marsupilami_add_amis', {'id': a.id}) }}">  <button type="button" class="btn btn-block btn-info btn-sm">Ajouter dans ma liste d'amis</button> </a></td>
+                                                {% endif %}
+                                            </tr>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

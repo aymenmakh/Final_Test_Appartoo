@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="box box-primary">
+      <div class="box-body box-profile">
+          <section class="content">
+              <div class="row">
+                  <div class="col-md-10">
+
+                      <!-- /.box-header -->
+                      <div class="box-body">
+                          
+                          <div class="col">
+                                <input [(ngModel)]="searchText" class="form-control form-control-lg form-control-borderless" type="search" placeholder="recherche par username">
+                            </div>
+                         
+                          <br>
+                          <table class="table table-bordered">
+
+                             
+
+                                      <tr *ngFor="let a of marsupilamis | filter : searchText" >
+                                        
+                                          <td> <b>UserName :</b> {{ a.username}} </td>
+                                          <td> <b>Famille :</b> {{ a.famille }} </td>
+                                          <td> <b>Nourriture :</b>  {{ a.nourriture}} </td>
+                                          <td>  <b>Couleur :</b>  {{ a.couleur }} </td>
+                                          <td>  <b>Age     :</b>  {{ a.age}} </td>
+                                          
+                                              <td *ngIf="a.username_canonical=='ami'">  <a (click)="supamis(currentUSer,a.id)">  <button type="button"  class="btn btn-block btn-danger btn-sm">retirer de ma liste d'amis</button></a>
+                                              </td>
+                                         
+                                              <td *ngIf="a.username_canonical!='ami'">  <a (click)="adamis(currentUSer,a.id)">  <button type="button"  class="btn btn-block btn-info btn-sm">Ajouter dans ma liste d'amis</button> </a></td>
+                                            
+                                      </tr>
+
+                                     
+                        
+                          </table>
+                          <button style="width:50%;position:relative;left:20%"type="button" routerLink="/newAmi" routerLinkActive="active"  class="btn btn-block btn-success">Ajouter un nouveau ami</button>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </div>
+</div>

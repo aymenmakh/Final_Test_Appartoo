@@ -1,0 +1,89 @@
+
+{% extends  "@Marsupilami/layout.html.twig"%}
+{% block body %}
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="{{ asset('bundles/Marsupilami.jpg') }}" >
+
+                <h3 class="profile-username text-center">{{ app.user.username }}</h3>
+
+
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-10">
+
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table class="table table-bordered">
+
+
+                                        <tr>
+
+                                            <td><b>Famille</b></td>
+                                            <td>
+                                                {{ marsupilami.famille }}
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+
+                                            <td><b>Nourriture</b></td>
+                                            <td>
+                                                {{ marsupilami.nourriture }}
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+
+                                            <td><b>Age</b></td>
+                                            <td>
+                                                {{ marsupilami.age }}
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+
+                                            <td><b>Couleur</b></td>
+                                            <td>
+                                                {{ marsupilami.couleur }}
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- /.box-body -->
+
+
+                            <!-- /.box -->
+
+
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+
+                                <!-- /.box-header -->
+
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+
+
+                        <!-- /.col -->
+
+                    <!-- /.row -->
+                    <a href="{{  path('marsupilami_Modifier', {'id':marsupilami.id})}}" style="width:40%;position: relative;left: 30%;" class="btn btn-primary btn-block"><b>Modifier</b></a>
+                </section>
+
+
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+
+
+
+    </div>
+
+{% endblock %}

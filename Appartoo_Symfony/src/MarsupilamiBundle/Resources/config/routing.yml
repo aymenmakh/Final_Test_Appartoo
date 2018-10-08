@@ -1,0 +1,49 @@
+
+marsupilami_homepage:
+    path:     /
+    defaults: { _controller: MarsupilamiBundle:Default:index }
+
+marsupilami_Modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: MarsupilamiBundle:Default:modifier }
+marsupilami_amis:
+    path:     /amis
+    defaults: { _controller: MarsupilamiBundle:Default:amis }
+marsupilami_add_amis:
+    path:     /addamis/{id}
+    defaults: { _controller: MarsupilamiBundle:Default:addamis }
+marsupilami_Supp_amis:
+    path:     /Suppamis/{id}
+    defaults: { _controller: MarsupilamiBundle:Default:Supp}
+marsupilami_add:
+    path:     /add
+    defaults: { _controller: MarsupilamiBundle:Default:Add}
+marsupilami_login:
+    path: /loginMarsupilami/{login}/{password}
+    defaults: {_controller: MarsupilamiBundle:Default:loginRest}
+marsupilami_api:
+    path: /rose
+    defaults: {_controller: MarsupilamiBundle:Default:get}
+api_get:
+    path: /getMarsupilami/{id}
+    defaults: {_controller: MarsupilamiBundle:Api:get}
+api_login:
+    path: /loginapi/{login}/{password}
+    defaults: {_controller: MarsupilamiBundle:Api:loginRest}
+api_register:
+    path : /registerapi
+    defaults: {_controller: MarsupilamiBundle:Api:Registration}
+api_modif:
+    path : /modifapi/{id}
+    defaults: {_controller: MarsupilamiBundle:Api:Modif}
+api_all:
+    path : /allapi
+    defaults: {_controller: MarsupilamiBundle:Api:getAll}
+api_addAmi:
+    path : /adapi/{id1}/{id2}
+    defaults: {_controller: MarsupilamiBundle:Api:Addamis}
+api_SupAmi:
+    path : /supapi/{id1}/{id2}
+    defaults: {_controller: MarsupilamiBundle:Api:Removeamis}
+
+

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Marsupilamis list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Age</th>
+                <th>Couleur</th>
+                <th>Nourriture</th>
+                <th>Famille</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for marsupilami in marsupilamis %}
+            <tr>
+                <td><a href="{{ path('marsupilami_show', { 'id': marsupilami.id }) }}">{{ marsupilami.id }}</a></td>
+                <td>{{ marsupilami.age }}</td>
+                <td>{{ marsupilami.couleur }}</td>
+                <td>{{ marsupilami.nourriture }}</td>
+                <td>{{ marsupilami.famille }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('marsupilami_show', { 'id': marsupilami.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

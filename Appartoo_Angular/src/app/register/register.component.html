@@ -1,0 +1,59 @@
+<div class="register-box">
+  <div class="register-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">Register a new membership</p>
+
+    <form (ngSubmit)="doRegister()" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="username" [(ngModel)]="marsupilami.username" placeholder="username">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" name="email" [(ngModel)]="marsupilami.email" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="password" [(ngModel)]="marsupilami.password" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="passwordR" [(ngModel)]="passwordR"  placeholder="Retype password">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text"  class="form-control" name="age" [(ngModel)]="marsupilami.age" placeholder="age">
+        <span class="glyphicon glyphicon-baby-formula form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text"  class="form-control" name="famille" [(ngModel)]="marsupilami.famille" placeholder="famille">
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text"  class="form-control" name="couleur" [(ngModel)]="marsupilami.couleur" placeholder="couleur">
+        <span class="glyphicon glyphicon-stop form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="nourriture" [(ngModel)]="marsupilami.nourriture" placeholder="nourriture">
+        <span class="glyphicon glyphicon-cutlery form-control-feedback"></span>
+      </div>
+
+      <div class="row">
+        
+        <!-- /.col -->
+        <div class="col-xs-6">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+
+    <a  routerLink="/login" routerLinkActive="active" class="text-center">I already have a membership</a>
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+  

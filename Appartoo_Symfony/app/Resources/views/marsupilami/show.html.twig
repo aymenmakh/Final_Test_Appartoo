@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Marsupilami</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ marsupilami.id }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ marsupilami.age }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ marsupilami.couleur }}</td>
+            </tr>
+            <tr>
+                <th>Nourriture</th>
+                <td>{{ marsupilami.nourriture }}</td>
+            </tr>
+            <tr>
+                <th>Famille</th>
+                <td>{{ marsupilami.famille }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('marsupilami_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
